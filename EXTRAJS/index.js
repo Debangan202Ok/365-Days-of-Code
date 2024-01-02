@@ -148,12 +148,12 @@
 
 // console.log(Maping(arr,Logic))
 
-function x(y) {
-    let a = 72;
-    y()
-    console.log(y)
-}
+// function x(y) {
+//     let a = 72;
+//     y()
+//     console.log(y)
+// }
 
-x(function y () {
-    console.log(x)
-})
+// x(function y () {
+//     console.log(x)
+// })
