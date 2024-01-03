@@ -39,9 +39,24 @@ const student = {
 
 const student2 = {
     Sname: "Dipika",
+    Sname1: "Rahul",
 }
 
 student.printName()
 student.printName.call(student2)
+
+//this inside a nested function
+function n1() {
+    console.log(this);
+    function n2() {
+        console.log(this);
+        function n3() {
+            console.log(this);
+        }
+        n3()
+    }
+    n2()
+}
+n1()   //in strict mode bydefault value od "this" is undefined.
 
 //call apply bind methods (sharing methods)
