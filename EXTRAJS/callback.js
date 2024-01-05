@@ -18,3 +18,14 @@ function Customer(name, coffe) {
 Customer("Rahul", "Black Coffe");
 
 console.log("i'm last");
+
+function asyncAdd(a,b,callback) {
+  setTimeout(function () {
+    let result = a + b
+    callback(result)
+  },1000)
+}
+
+asyncAdd(2,3,function (sum){
+  console.log('Sum:',sum)
+})
