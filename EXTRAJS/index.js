@@ -1,3 +1,12 @@
+// javascript is a Synchronus Single Threaded loosely type multiparadigm Programming Language
+
+//1.Synchronus mean each line of code executed one by one 
+//2.Single Threaded mean All code are executed through one space which is known as Call Stack-(LIFO)
+//3.Loosely type mean there is no type declaration like integer,character etc.
+//4.Multiparadigm support -Functional & Object Oriented Programming.
+
+//However We can Write Asynchronous Javascript code through some API's & Call Back
+
 // console.log(num);
 // console.log(square)
 
@@ -37,7 +46,6 @@
 
 // console.log(this)
 
-// javascript is a Synchronus Single Threaded loosely type multiparadigm Programming Language
 
 // var x = undefined;
 // console.log(typeof x);
