@@ -15,15 +15,17 @@ const container = React.createElement("div", { id: "main-con" }, [
 
 // Nested Elements
 const List = React.createElement("ol", {}, [
-  React.createElement("h2", {}, "Hii, There"),
-  React.createElement("li", {}, "Humty Dumty learning Call!"),
-  React.createElement("li", {}, "Humty Dumty Making Call!"),
-  React.createElement("li", {}, "Humty Dumty Breaking Wall!"),
+  React.createElement("h2", { key: 1 }, "Hii, There"),
+  React.createElement("li", { key: 2 }, "Humty Dumty learning Call!"),
+  React.createElement("li", { key: 3 }, "Humty Dumty Making Call!"),
+  React.createElement("li", { key: 4 }, "Humty Dumty Breaking Wall!"),
 ]);
 
 const HeadNest = React.createElement("h1", {}, [
   "I'm an Heading",
-  React.createElement("h2", {}, "I'm an Heading 2"),
+  React.createElement("h2", { style: { color: "red" } }, "I'm an Heading 2"),
 ]);
+
+console.log(List); //it is an object
 
 ReactDOM.render([container, List, HeadNest], document.getElementById("root"));
