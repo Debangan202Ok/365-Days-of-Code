@@ -60,3 +60,7 @@ function n1() {
 n1()   //in strict mode bydefault value od "this" is undefined.
 
 //call apply bind methods (sharing methods)
+
+function Clicked() {
+    console.log("clicked")
+}

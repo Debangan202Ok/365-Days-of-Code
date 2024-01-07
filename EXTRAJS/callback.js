@@ -84,3 +84,12 @@ function finalCallback() {
 
 // Run the tasks sequentially
 runMultipleCallbacks(tasks, finalCallback);
+
+function PizzaOrder(name,callback) {
+  console.log(`${name} is Prepearing`)
+  callback(name)
+}
+
+PizzaOrder("ChiliSwezoan",function callback(name){
+  console.log(`Your ${name} is going to Deliever`)
+})
