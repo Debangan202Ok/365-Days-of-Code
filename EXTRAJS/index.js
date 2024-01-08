@@ -10,6 +10,10 @@
 // console.log(num);
 // console.log(square)
 
+// let hero = <h1>I'm a Hero</h1>
+// console.log(hero)
+
+
 // var num = 2;
 
 // function square(num) {
