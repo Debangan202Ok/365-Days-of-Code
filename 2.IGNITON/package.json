@@ -18,9 +18,5 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "browseerlist": [
-    "last 10 chrome version",
-    "last 10 firefox version"
-  ]
+  }
 }
