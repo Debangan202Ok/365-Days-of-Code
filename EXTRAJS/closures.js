@@ -9,6 +9,7 @@ console.log(Increment(4));
 console.log(i);
 
 //  Always remember Let & Const Are Blocked Scope.
+//let & Const are blocked Scope mean it is being hoisted differently in a particular block where is created.
 //Example
 
 console.log("Scope");
