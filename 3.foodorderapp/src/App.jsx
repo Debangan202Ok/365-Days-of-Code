@@ -1,9 +1,13 @@
 import React from "react";
+import NavBar from "./components/navbar";
+import InfoCard from "./components/infocard"
 
 const Home = () => {
+
     return (
         <div>
-            <h1>Home Page</h1>
+            <NavBar/>
+            <InfoCard />
         </div>
     )
 }
