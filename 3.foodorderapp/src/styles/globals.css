@@ -13,3 +13,6 @@ nav {
 ul li {
     margin: 0 10px;
 }
+img {
+    display: block;
+}
