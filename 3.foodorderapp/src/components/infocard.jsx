@@ -59,26 +59,26 @@ const InfoCard = () => {
   ];
 
   return (
-    <div className="card-container">
+    <>
       {Data.map((item) => {
         return (
-          <div key={Data.id}>
+          <div key={item.id} className="card-container">
             <div className="img-container">
               <img src="../../public/oil.jpg" alt="image" />
             </div>
             <div className="body-container">
-              <h2>{Data.name}</h2>
-              <h4>{Data.description}</h4>
+              <h2>{item.name}</h2>
+              <h4>{item.description}</h4>
               <div className="price-con">
-                <h3>Price</h3>
-                <p>{Data.price}</p>
+                <h3>Price:</h3>
+                <p>${item.price}</p>
               </div>
               <button>Add to Cart</button>
             </div>
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 

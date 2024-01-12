@@ -42,3 +42,14 @@ img {
     align-items: center;
     justify-content: space-between;
 }
+.price-con > h3 {
+    font-size: medium;
+}
+
+.body-container > button {
+    background-color: green;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
