@@ -1,21 +1,83 @@
 const InfoCard = () => {
+  const Data = [
+    {
+      id: 1,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 2,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 3,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 4,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 5,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 6,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+    {
+      id: 7,
+      name: "Product Name",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
+      price: 100,
+      image: "../../public/oil.jpg",
+    },
+  ];
+
   return (
     <div className="card-container">
-      <div className="img-container">
-        <img src="../../public/oil.jpg" alt="image" />
-      </div>
-      <div className="body-container">
-        <h2>Product Name</h2>
-        <h4>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione,
-          ipsa?
-        </h4> 
-        <div className="price-con">
-        <h3>Price</h3>
-        <p>$100</p>
-        </div>
-        <button>Add to Cart</button>
-      </div>
+      {Data.map((item) => {
+        return (
+          <div key={Data.id}>
+            <div className="img-container">
+              <img src="../../public/oil.jpg" alt="image" />
+            </div>
+            <div className="body-container">
+              <h2>{Data.name}</h2>
+              <h4>{Data.description}</h4>
+              <div className="price-con">
+                <h3>Price</h3>
+                <p>{Data.price}</p>
+              </div>
+              <button>Add to Cart</button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
