@@ -16,3 +16,29 @@ ul li {
 img {
     display: block;
 }
+
+.card-container {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 2px;
+    width: 200px;
+    margin: 5px;
+}
+.img-container {
+    border: 1px solid black;
+    margin-bottom: 2px;
+}
+.body-container {
+    border: 1px solid black;
+    padding: 2px;
+}
+.body-container > h4 {
+    color: grey;
+    font-weight: 200;
+    font-size: small ;
+}
+.price-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

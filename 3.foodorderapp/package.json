@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "restart": "rm -rf dist && rm -rf .parcel-cache && parcel serve index.html"
   },
   "keywords": [
     "food",
