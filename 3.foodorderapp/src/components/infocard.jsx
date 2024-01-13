@@ -1,9 +1,11 @@
 import Oil from "../../public/oil.jpg";
 
 const InfoCard = (props) => {
-  const { id, name, description, price } = props;
+  const { resData } = props;
+  const { name, description, price } = resData;
+
   return (
-    <div key={id} className="card-container">
+    <div className="card-container">
       <div className="img-container">
         <img src={Oil} alt="image" />
       </div>

@@ -3,7 +3,6 @@ import InfoCard from "./infocard";
 const Body = () => {
   const Data = [
     {
-      id: 1,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -11,7 +10,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 2,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -19,7 +17,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 3,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -27,7 +24,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 4,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -35,7 +31,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 5,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -43,7 +38,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 6,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -51,7 +45,6 @@ const Body = () => {
       image: "../../public/oil.jpg",
     },
     {
-      id: 7,
       name: "Product Name",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, ipsa?",
@@ -62,17 +55,10 @@ const Body = () => {
 
   return (
     <div className="body">
-      {Data.map((i)=>{
-        return (
-          <InfoCard
-            key={i.id}
-            name={i.name}
-            description={i.description}
-            price={i.price}
-            image={i.image}
-          />
-        )
-      })}
+      {Data.map((item, index) => (
+        <InfoCard key={index} resData={item} />
+      ))}
+      {/*always use key prop when using map function */}
     </div>
   );
 };
