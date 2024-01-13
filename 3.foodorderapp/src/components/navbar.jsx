@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return (
     <nav>
-      <div>ZWIGGY</div>
+      <div><span>ZWIGGY</span></div>
       <div className="navList">
         <ul style={ListStyle}>
           <li>HOME</li>

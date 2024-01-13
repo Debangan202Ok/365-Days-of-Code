@@ -1,59 +1,64 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 nav {
-    display: flex;
-    align-items: center;
-    background-color: #000;
-    color: #fff;
-    justify-content: space-between;
-    padding:  10px 25px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  justify-content: space-between;
+  padding: 10px 25px;
 }
 ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .card-container {
-    border: 1px solid black;
-    display: inline-block;
-    padding: 2px;
-    width: 200px;
-    margin: 5px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 2px;
+  width: 200px;
+  margin: 5px;
 }
 .card-container:hover {
-    box-shadow: 0 0 5px 1px grey;
+  box-shadow: 0 0 5px 1px grey;
 }
 .img-container {
-    border: 1px solid black;
-    margin-bottom: 2px;
+  border: 1px solid black;
+  margin-bottom: 2px;
 }
 .body-container {
-    border: 1px solid black;
-    padding: 2px;
+  border: 1px solid black;
+  padding: 2px;
 }
 .body-container > h4 {
-    color: grey;
-    font-weight: 200;
-    font-size: small ;
+  color: grey;
+  font-weight: 200;
+  font-size: small;
 }
 .price-con {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .price-con > h3 {
-    font-size: medium;
+  font-size: medium;
 }
 
 .body-container > button {
-    background-color: green;
-    color: #fff;
-    padding: 5px;
-    cursor: pointer;
-    border: none;
+  background-color: green;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.custom-area > button {
+  margin: 5px 0 0 5px;
+  padding: 0 5px;
 }
