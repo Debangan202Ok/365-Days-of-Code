@@ -15,6 +15,7 @@ ul li {
 }
 img {
     display: block;
+    width: 100%;
 }
 
 .card-container {
@@ -23,6 +24,9 @@ img {
     padding: 2px;
     width: 200px;
     margin: 5px;
+}
+.card-container:hover {
+    box-shadow: 0 0 5px 1px grey;
 }
 .img-container {
     border: 1px solid black;
