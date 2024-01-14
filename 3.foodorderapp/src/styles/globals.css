@@ -50,7 +50,7 @@ img {
   font-size: medium;
 }
 
-.body-container > button {
+.body-container > div > button {
   background-color: green;
   color: #fff;
   padding: 5px;
@@ -61,4 +61,10 @@ img {
 .custom-area > button {
   margin: 5px 0 0 5px;
   padding: 0 5px;
+}
+
+.bag-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

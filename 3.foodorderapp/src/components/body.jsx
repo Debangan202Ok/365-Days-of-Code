@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InfoCard from "./infocard";
-import { Data } from "../utils/mockData";
 
 const Body = () => {
-  const[filterRes,setFilterRes]=useState(Data);
+  const [filterRes, setFilterRes] = useState([]);
 
-  const filterItem = () => {
-    setFilterRes(filterRes.filter((item) => item.price >= 100))
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const Data1 = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    );
+    const resData = await Data1.json();
+    const resCardData =
+      resData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+    setFilterRes(resCardData);
   };
+
   return (
     <div className="body">
       <div className="custom-area">
-        <button onClick={filterItem}>Filter to Top</button>
+        <button>{"Filter"}</button>
       </div>
-      {filterRes.map((item, index) => (
-        <InfoCard key={index} resData={item} />
+      {filterRes.map((item) => (
+        <InfoCard key={item.info.id} resData={item.info} />
       ))}
     </div>
   );

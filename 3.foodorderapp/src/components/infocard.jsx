@@ -1,22 +1,32 @@
 import Oil from "../../public/oil.jpg";
+import { CDN_URL } from "../utils/constants";
 
 const InfoCard = (props) => {
   const { resData } = props;
-  const { name, description, price } = resData;
-
+  const {
+    name,
+    cuisines,
+    costForTwo,
+    totalRatingsString,
+    avgRatingString,
+    cloudinaryImageId,
+  } = resData;
   return (
     <div className="card-container">
       <div className="img-container">
-        <img src={Oil} alt="image" />
+        <img src={CDN_URL + cloudinaryImageId} alt="image" />
       </div>
       <div className="body-container">
         <h2>{name}</h2>
-        <h4>{description}</h4>
+        <h4>{cuisines}</h4>
         <div className="price-con">
-          <h3>Price:</h3>
-          <p>${price}</p>
+          <p>{totalRatingsString}Rating</p>
+          <p>{avgRatingString}</p>
         </div>
-        <button>Add to Cart</button>
+        <div className="bag-con">
+          <button>Add to Cart</button>
+          <h3>{costForTwo}</h3>
+        </div>
       </div>
     </div>
   );
