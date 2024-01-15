@@ -14,7 +14,8 @@ const Body = () => {
     );
     const resData = await Data1.json();
     const resCardData =
-      resData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+      resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
     setFilterRes(resCardData);
   };
 
@@ -23,9 +24,11 @@ const Body = () => {
       <div className="custom-area">
         <button>{"Filter"}</button>
       </div>
-      {filterRes.map((item) => (
-        <InfoCard key={item.info.id} resData={item.info} />
-      ))}
+      <div className="res-container">
+        {filterRes.map((item) => (
+          <InfoCard key={item.info.id} resData={item.info} />
+        ))}
+      </div>
     </div>
   );
 };
