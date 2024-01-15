@@ -85,3 +85,65 @@ img {
   flex-wrap: wrap;
   padding:0 50px;
 }
+
+
+/* Skeleton Design  */
+
+.card-container-skeleton {
+  margin: 5px 50px;
+  width: 200px;
+}
+
+.custom-area-skeleton > div {
+  margin: 5px 0 0 5px;
+  padding: 0 5px;
+  background-color: #f0f0f0;
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.img-container-skeleton {
+  margin-bottom: 2px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+  height: 100px;
+  background-color: #f0f0f0;
+}
+
+.body-container-skeleton > h4 {
+  width: 100px;
+  height: 10px;
+  background-color: #f0f0f0;
+  margin: 4px 0;
+}
+.price-con-skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+.price-con-skeleton > p {
+  height: 10px;
+  width: 40px;
+  background-color: #f0f0f0;
+}
+.bag-con-skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bag-con-skeleton > div {
+  height: 25px;
+  width: 70px;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+.bag-con-skeleton > div:nth-child(2) {
+  height: 20px;
+  width: 50px;
+
+}
+

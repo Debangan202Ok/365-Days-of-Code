@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import InfoCard from "./infocard";
+import Skeleton from "./Shimming";
 
 const Body = () => {
   const [filterRes, setFilterRes] = useState([]);
@@ -19,7 +20,7 @@ const Body = () => {
     setFilterRes(resCardData);
   };
 
-  return (
+  return filterRes.length === 0 ? (<Skeleton/>) : (
     <div className="body">
       <div className="custom-area">
         <button>{"Filter"}</button>
