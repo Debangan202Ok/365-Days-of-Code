@@ -23,6 +23,10 @@ const Body = () => {
   return filterRes.length === 0 ? (<Skeleton/>) : (
     <div className="body">
       <div className="custom-area">
+        <div className="srch-area">
+          <input type="search" name="" id="" />
+          <button>Search</button>
+        </div>
         <button>{"Filter"}</button>
       </div>
       <div className="res-container">
