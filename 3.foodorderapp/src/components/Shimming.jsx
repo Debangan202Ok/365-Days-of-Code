@@ -15,8 +15,6 @@ function Skeleton() {
         <SkelCard />
         <SkelCard />
         <SkelCard />
-        <SkelCard />
-        <SkelCard />
       </div>
     </div>
   );

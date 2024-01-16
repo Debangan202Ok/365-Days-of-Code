@@ -19,7 +19,7 @@ const Body = () => {
         ?.restaurants;
     setFilterRes(resCardData);
   };
-
+  // condlitional rendering 
   return filterRes.length === 0 ? (<Skeleton/>) : (
     <div className="body">
       <div className="custom-area">
