@@ -24,10 +24,10 @@ const Body = () => {
     <div className="body">
       <div className="custom-area">
         <div className="srch-area">
-          <input type="search" name="" id="" />
+          <input className="srch-box" type="search" name="" id=""  placeholder="Search Food or Resturant"/>
           <button>Search</button>
         </div>
-        <button>{"Filter"}</button>
+        <button className="btn-fltr">{"Filter"}</button>
       </div>
       <div className="res-container">
         {filterRes.map((item) => (
