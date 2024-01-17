@@ -10,6 +10,8 @@ const InfoCard = (props) => {
     avgRatingString,
     cloudinaryImageId,
   } = resData;
+
+  console.log(cuisines)
   return (
     <div className="card-container">
       <div className="img-container">
@@ -17,7 +19,7 @@ const InfoCard = (props) => {
       </div>
       <div className="body-container">
         <h2>{name}</h2>
-        <h4>{cuisines}</h4>
+        <h4>{cuisines.concat(', ')}</h4>
         <div className="price-con">
           <p>{totalRatingsString}Rating</p>
           <p>{avgRatingString}</p>
