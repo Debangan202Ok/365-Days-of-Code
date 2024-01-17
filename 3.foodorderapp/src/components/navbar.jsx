@@ -11,8 +11,9 @@ const NavBar = () => {
       <div className="navList">
         <ul style={ListStyle}>
           <li>HOME</li>
-          <li>DOCS</li>
-          <li>LEARN</li>
+          <li>ABOUT US</li>
+          <li>CONTACT US</li>
+          <li>CART</li>
         </ul>
       </div>
     </nav>

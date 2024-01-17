@@ -1,4 +1,3 @@
-import Oil from "../../public/oil.jpg";
 import { CDN_URL } from "../utils/constants";
 
 const InfoCard = (props) => {

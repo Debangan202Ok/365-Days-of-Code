@@ -6,10 +6,12 @@
 nav {
   display: flex;
   align-items: center;
-  background-color: #000;
+  background: linear-gradient(red,darkorange);
   color: #fff;
   justify-content: space-between;
-  padding: 10px 25px;
+  padding: 20px 25px;
+  position: sticky;
+  top: 0;
 }
 ul li {
   margin: 0 10px;
@@ -49,8 +51,10 @@ img {
   margin: 2px 0;
   font-size: medium;
 }
-.price-con > h3 {
-  font-size: medium;
+.price-con > p {
+  font-size: small;
+  font-weight: bold;
+  padding: 2px 0;
 }
 
 .body-container > div > button {
@@ -101,8 +105,9 @@ img {
   padding: 5px;
   width: 250px;
   height: 30px;
-  border: 0.5px solid grey;
+  border: 0.5px solid darkblue;
   border-radius: 5px 0 0 5px;
+  border-right: 0;
 }
 
 .srch-area > button {
@@ -178,3 +183,13 @@ img {
 
 }
 
+/* Not Found container  */
+
+.notfound-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+  font-weight: bolder;
+}
