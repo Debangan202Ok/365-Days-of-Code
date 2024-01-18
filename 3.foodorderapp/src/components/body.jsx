@@ -4,7 +4,7 @@ import Skeleton from "./Shimming";
 import NotFound from "./NotFound";
 
 const Body = () => {
-  console.log("Body")
+  console.log("Body");
   const [filterRes, setFilterRes] = useState([]);
   const [inputVal, setInputVal] = useState("");
   const [srchRes, setSrchRes] = useState([]);
@@ -50,10 +50,13 @@ const Body = () => {
         <button className="btn-fltr">{"Filter"}</button>
       </div>
       {srchRes.length === 0 && <NotFound />}
-      <div className="res-container">
-        {srchRes.map((item) => (
-          <InfoCard key={item.info.id} resData={item.info} />
-        ))}
+      <div className="con-wrap">
+        <div className="res-container">
+          {srchRes.map((item) => (
+            <InfoCard key={item.info.id} resData={item.info} />
+          ))}
+        </div>
+        <div>SHOW MORE</div>
       </div>
     </div>
   );

@@ -21,12 +21,7 @@ img {
   width: 100%;
 }
 
-.card-container {
-  display: inline-block;
-  padding: 2px;
-  width: 200px;
-  margin: 5px;
-}
+
 .card-container:hover {
   box-shadow: 0 0 5px 1px grey;
   border-radius: 5px;
@@ -97,9 +92,16 @@ img {
 /* body  */
 .res-container {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-wrap: wrap;
-  padding:0 50px;
+  background-color: blue;
+}
+.card-container {
+  /* display: inline-block; */
+  padding: 2px;
+  width: 200px;
+  margin: 5px;
+  align-self: self-start;
 }
 .srch-box {
   padding: 5px;
@@ -121,14 +123,16 @@ img {
 .btn-fltr {
   padding: 5px;
 }
+.con-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red;
+  align-items: center;
+}
 
 
 /* Skeleton Design  */
-
-.card-container-skeleton {
-  margin: 5px 50px;
-  width: 200px;
-}
 
 .custom-area-skeleton > div {
   margin: 5px 0 0 5px;

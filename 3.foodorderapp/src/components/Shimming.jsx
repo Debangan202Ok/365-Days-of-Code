@@ -8,13 +8,13 @@ function Skeleton() {
         <div></div>
       </div>
       <div className="res-container">
-        <SkelCard />
-        <SkelCard />
-        <SkelCard />
-        <SkelCard />
-        <SkelCard />
-        <SkelCard />
-        <SkelCard />
+          <SkelCard />
+          <SkelCard />
+          <SkelCard />
+          <SkelCard />
+          <SkelCard />
+          <SkelCard />
+          <SkelCard />
       </div>
     </div>
   );

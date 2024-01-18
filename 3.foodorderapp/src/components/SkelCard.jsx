@@ -2,7 +2,7 @@ import React from "react";
 
 function SkelCard() {
   return (
-    <div className="card-container-skeleton">
+    <div className="card-container">
       <div className="img-container-skeleton"></div>
       <div className="body-container-skeleton">
         <h4></h4>

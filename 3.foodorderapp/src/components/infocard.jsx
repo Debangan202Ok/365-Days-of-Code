@@ -11,7 +11,6 @@ const InfoCard = (props) => {
     cloudinaryImageId,
   } = resData;
 
-  console.log(cuisines)
   return (
     <div className="card-container">
       <div className="img-container">
