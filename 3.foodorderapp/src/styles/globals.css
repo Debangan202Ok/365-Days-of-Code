@@ -94,7 +94,6 @@ img {
   display: flex;
   /* justify-content: space-around; */
   flex-wrap: wrap;
-  background-color: blue;
 }
 .card-container {
   /* display: inline-block; */
@@ -127,7 +126,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: red;
   align-items: center;
 }
 

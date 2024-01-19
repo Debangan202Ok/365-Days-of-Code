@@ -8,6 +8,7 @@ const Body = () => {
   const [filterRes, setFilterRes] = useState([]);
   const [inputVal, setInputVal] = useState("");
   const [srchRes, setSrchRes] = useState([]);
+  // const [fetchMore, setFetchMore] = useState([]);
   const srchVal = () => {
     const filterData = filterRes.filter((item) =>
       item.info.name.toLowerCase().includes(inputVal.toLowerCase())
@@ -17,10 +18,10 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
+  console.log(filterRes)
   const fetchData = async () => {
     const Data1 = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.960059122809971&lng=77.57337538383284&page_type=DESKTOP_WEB_LISTING"
     );
     const resData = await Data1.json();
     const resCardData =
@@ -29,6 +30,20 @@ const Body = () => {
     setFilterRes(resCardData);
     setSrchRes(resCardData);
   };
+
+  const hasMore = async () => {
+    const moreData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+    const moreDataRes = await moreData.json();
+    console.log(moreDataRes);
+    const moreDataCard = moreDataRes?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    // setFetchMore(moreDataCard);
+    setFilterRes([...filterRes, ...moreDataCard]);
+    setSrchRes([...srchRes, ...moreDataCard]);
+  }
+
+  const fetchMoreBtn = async () => {
+    hasMore()
+  }
   // condlitional rendering
   return filterRes.length === 0 ? (
     <Skeleton />
@@ -56,7 +71,11 @@ const Body = () => {
             <InfoCard key={item.info.id} resData={item.info} />
           ))}
         </div>
-        <div>SHOW MORE</div>
+        {filterRes.length && srchRes.length !== 0 ? (
+          <button onClick={fetchMoreBtn}>SHOW MORE</button>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
