@@ -5,7 +5,15 @@ import NotFound from "./NotFound";
 import SrchArea from "./bodysmallcom/SrchArea";
 
 const Body = () => {
-  console.log("Body");
+  const [winSize, setWinSize] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWinSize(window.innerWidth);
+    });
+  }, []);
+  const containerWidth = {
+    width: `${Math.floor(winSize / 310) * 310}px`,
+  };
   const [filterRes, setFilterRes] = useState([]);
   const [inputVal, setInputVal] = useState("");
   const [srchRes, setSrchRes] = useState([]);
@@ -20,7 +28,6 @@ const Body = () => {
     fetchData();
   }, []);
 
-  console.log(filterRes);
   const fetchData = async () => {
     const Data1 = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.960059122809971&lng=77.57337538383284&page_type=DESKTOP_WEB_LISTING"
@@ -62,7 +69,7 @@ const Body = () => {
       />
       {srchRes.length === 0 && <NotFound />}
       <div className="con-wrap">
-        <div className="res-container">
+        <div className="res-container" style={{ width: containerWidth.width }}>
           {srchRes.map((item) => (
             <InfoCard key={item.info.id} resData={item.info} />
           ))}

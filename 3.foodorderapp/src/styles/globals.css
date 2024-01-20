@@ -6,9 +6,10 @@
 nav {
   display: flex;
   align-items: center;
-  background: linear-gradient(red,darkorange);
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   justify-content: space-between;
+  box-shadow: 0.5px 0.5px 2.5px 0px grey;
   padding: 20px 25px;
   position: sticky;
   top: 0;
@@ -70,7 +71,7 @@ img {
 .custom-area {
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 40px;
   justify-content: end;
   margin: 10px 0;
 }
@@ -96,10 +97,8 @@ img {
   flex-wrap: wrap;
 }
 .card-container {
-  /* display: inline-block; */
-  padding: 2px;
-  width: 200px;
-  margin: 5px;
+  width: 300px;
+  margin: 10px 5px ;
   align-self: self-start;
 }
 .srch-box {
