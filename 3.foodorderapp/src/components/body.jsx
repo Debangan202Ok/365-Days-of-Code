@@ -75,7 +75,7 @@ const Body = () => {
           ))}
         </div>
         {filterRes.length && srchRes.length !== 0 && (
-          <button onClick={fetchMoreBtn}>SHOW MORE</button>
+          <span className="show-more" onClick={fetchMoreBtn}>SHOW MORE {">"}</span>
         )}
       </div>
     </div>
