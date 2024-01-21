@@ -5,7 +5,7 @@ function Footer() {
     <div className='footer-area'>
         <div className='footer-con'>
             <h1>ZWIGGY</h1>
-            <h3>AN ONLINE FOOD ORDER APP</h3>
+            <h3>AN ONLINE FOOD ORDERING APP</h3>
         </div>
         <div className='footer-con'>
             <ul>
