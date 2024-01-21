@@ -20,6 +20,7 @@ ul li {
 .logo {
   font-size: 25px;
   font-weight: bold;
+  cursor: pointer;
 }
 .logo > span {
   background-image: linear-gradient(to right, #ff105f, #ffad06);
@@ -136,7 +137,15 @@ img {
 
 
 /* Skeleton Design  */
-
+.card-container-skel {
+  width: 300px;
+  margin: 10px 5px ;
+  align-self: self-start;
+}
+.cus-area-con {
+  width: calc(100% - 310px);
+  margin: 0 auto;
+}
 .custom-area-skeleton > div {
   margin: 5px 0 0 5px;
   padding: 0 5px;
@@ -225,4 +234,66 @@ ul {
 
 .footer-con > ul > li {
   margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+/* Resturant Card Section  */
+.res-card {
+  width: calc(100% - 350px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.res-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: 0.5px solid grey;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.res-rating {
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 5px;
+}
+.res-rating > p {
+  border-top: 1px solid green;
+}
+
+.menu-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+.menu-image {
+  width: 150px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+  overflow: hidden;
+}
+.menu-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menu-text {
+  max-width: 700px;
+}
+.menu-text > p {
+  color: grey;
+  margin: 5px 0;
 }

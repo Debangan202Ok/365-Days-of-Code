@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
   const ListStyle = {
     listStyle: "none",
@@ -12,8 +14,8 @@ const NavBar = () => {
       </div>
       <div className="navList">
         <ul style={ListStyle}>
-          <li>HOME</li>
-          <li>CART</li>
+          <li><Link to={`/`}>HOME</Link></li>
+          <li><Link to={`/Cart`}>CART</Link></li>
         </ul>
       </div>
     </nav>

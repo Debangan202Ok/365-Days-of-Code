@@ -4,6 +4,7 @@ import Skeleton from "./Shimming";
 import NotFound from "./NotFound";
 import SrchArea from "./bodysmallcom/SrchArea";
 import { API_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //states
@@ -36,7 +37,7 @@ const Body = () => {
     const resCardData =
       resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-        console.log(resCardData);
+    console.log(resCardData);
     setFilterRes(resCardData);
     setSrchRes(resCardData);
   };
@@ -68,7 +69,9 @@ const Body = () => {
   //! Rendering
   //* condlitional rendering
   // console.log(filterRes);
-  return filterRes.length === 0 ? (<Skeleton/>) : (
+  return filterRes.length === 0 ? (
+    <Skeleton />
+  ) : (
     <div className="body">
       <SrchArea
         inputVal={inputVal}
@@ -79,7 +82,9 @@ const Body = () => {
       <div className="con-wrap">
         <div className="res-container" style={{ width: containerWidth.width }}>
           {srchRes.map((item) => (
-            <InfoCard key={item.info.id} resData={item.info} />
+            <Link to={`/resturant/${item.info.id}`} key={item.info.id}>
+              <InfoCard resData={item.info} />
+            </Link>
           ))}
         </div>
         {srchRes.length !== 0 && inputVal.length == 0 && (
