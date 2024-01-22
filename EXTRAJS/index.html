@@ -9,12 +9,69 @@
     <button onclick="Clicked()">
         Click Me!
     </button>
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script>
     <script src="./hoisting.js"></script>
     <script src="./this.js"></script>
     <script src="./tempdeadzone.js"></script>
     <script src="./closures.js"></script>
     <script src="./callback.js"></script>
-    <script src="./prototype.js"></script>
+    <script src="./prototype.js"></script> -->
+    <script>
+        //refference type
+        // Objects
+        let Obj = {
+            name: "Ram",
+            class: "upper",
+            roll: 1234
+        }
+        let Obj2 = Obj;
+        Obj2.name = "Rahul"
+        console.log(Obj)
+        console.log(Obj2)
+
+        // Arrays
+        let Arr = [1,2,3,4,5];
+        let Arr2 = Arr;
+        Arr2[1]="Rahul"
+        console.log(Arr)
+        console.log(Arr2)
+
+        // variables
+        let a = 2;
+        let b = a;
+        a=3;
+        console.log(a)
+        console.log(b)
+
+        //Create a Object of an class
+        let SupObj = {
+            sup: class Sup {
+                constructor() {
+                    this.a = "hello"
+                }
+            }
+        }
+
+        const SupInstance = new SupObj.sup();
+        console.log(typeof SupInstance.a)
+
+        const Work = new Promise((res,rej)=>{
+            if(Obj.name == "Rahul") {
+                res(Obj)
+            }else {
+                rej("Data Not Matched")
+            }
+        })
+        Work.then((res)=>{
+            console.log(`Hlw ${Obj.name}`)
+            return Obj.class
+        })
+        .then((res)=>{
+            console.log(`You are belong from ${res} Class`)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    </script>
 </body>
 </html>
