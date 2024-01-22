@@ -7,6 +7,7 @@ const ResturrantCard = () => {
   let { id } = useParams();
   const [resCardData, setResCardData] = useState([]);
   const [resMenuData, setResMenuData] = useState([]);
+  const [additem, setAddItem] = useState(100);
 
   useEffect(() => {
     resturantDetails();
@@ -26,14 +27,16 @@ const ResturrantCard = () => {
     setResMenuData(resMenuData);
   };
 
-  return resMenuData.length === 0 ? (<Skeleton />) : (
+  return resCardData.length === 0 ? (
+    <Skeleton />
+  ) : (
     <div className="res-card">
       <div className="res-header">
         <div className="res-header-text">
           <h1>{resCardData?.name}</h1>
           <p>{resCardData?.cuisines?.join(", ")}</p>
           <p>
-            {resCardData?.areaName} {resCardData?.sla?.lastMileTravelString}
+            {resCardData?.areaName+","} {resCardData?.sla?.lastMileTravelString}
           </p>
           <p>{resCardData?.sla?.slaString.toLowerCase()}</p>
         </div>
@@ -48,10 +51,19 @@ const ResturrantCard = () => {
             <div className="menu-text">
               <h3>{item?.card?.info?.name}</h3>
               <p>{item?.card?.info?.description}</p>
-              <h5>₹{item?.card?.info?.defaultPrice / 100 || item?.card?.info?.price / 100}</h5>
+              <h5>
+                ₹
+                {item?.card?.info?.defaultPrice / 100 ||
+                  item?.card?.info?.price / 100}
+              </h5>
             </div>
             <div className="menu-image">
-              <img src={CDN_URL + item?.card?.info?.imageId} alt="" />
+                <img src={CDN_URL + item?.card?.info?.imageId} alt="" />
+              <div className="add-to-cart-con">
+                <div onClick={()=> {
+                  setAddItem(additem => additem+1)
+                }}>ADD:{additem}</div>
+              </div>
             </div>
           </div>
         );
