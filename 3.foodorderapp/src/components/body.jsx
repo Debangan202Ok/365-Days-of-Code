@@ -23,6 +23,7 @@ const Body = () => {
     window.addEventListener("resize", () => {
       setWinSize(window.innerWidth);
     });
+    console.log(filterRes);
   }, []);
 
   useEffect(() => {
@@ -37,11 +38,11 @@ const Body = () => {
     const resCardData =
       resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(resCardData);
     setFilterRes(resCardData);
     setSrchRes(resCardData);
   };
-
+  if (filterRes.length == 0) {
+  }
   const hasMore = async () => {
     const moreData = await fetch(
       API_URL + "lat=12.9351929&lng=77.62448069999999"
