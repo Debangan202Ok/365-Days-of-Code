@@ -21,7 +21,7 @@
         // Objects
         let Obj = {
             name: "Ram",
-            class: "upper",
+            class1: "upper",
             roll: 1234
         }
         let Obj2 = Obj;
@@ -64,7 +64,7 @@
         })
         Work.then((res)=>{
             console.log(`Hlw ${Obj.name}`)
-            return Obj.class
+            return Obj.class1
         })
         .then((res)=>{
             console.log(`You are belong from ${res} Class`)
@@ -72,6 +72,11 @@
         .catch((err)=>{
             console.log(err)
         })
+
+        let {name, class1, roll} = Obj;
+        roll = 5;
+        console.log(roll)
+        console.log(Obj.roll)
     </script>
 </body>
 </html>
