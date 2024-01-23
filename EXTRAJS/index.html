@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <button onclick="Clicked()">
-        Click Me!
-    </button>
+  </head>
+  <body>
+    <button onclick="Clicked()">Click Me!</button>
     <!-- <script src="./index.js"></script>
     <script src="./hoisting.js"></script>
     <script src="./this.js"></script>
@@ -17,66 +15,133 @@
     <script src="./callback.js"></script>
     <script src="./prototype.js"></script> -->
     <script>
-        //refference type
-        // Objects
-        let Obj = {
-            name: "Ram",
-            class1: "upper",
-            roll: 1234
-        }
-        let Obj2 = Obj;
-        Obj2.name = "Rahul"
-        console.log(Obj)
-        console.log(Obj2)
+      //refference type
+      // Objects
+      // let Obj = {
+      //   name: "Ram",
+      //   class1: "upper",
+      //   roll: 1234,
+      // };
+      // let Obj2 = Obj;
+      // Obj2.name = "Rahul";
+      // console.log(Obj);
+      // console.log(Obj2);
 
-        // Arrays
-        let Arr = [1,2,3,4,5];
-        let Arr2 = Arr;
-        Arr2[1]="Rahul"
-        console.log(Arr)
-        console.log(Arr2)
+      // Arrays
+      // let Arr = [1, 2, 3, 4, 5];
+      // let Arr2 = Arr;
+      // Arr2[1] = "Rahul";
+      // console.log(Arr);
+      // console.log(Arr2);
 
-        // variables
-        let a = 2;
-        let b = a;
-        a=3;
-        console.log(a)
-        console.log(b)
+      // variables
+      // let a = 2;
+      // let b = a;
+      // a = 3;
+      // console.log(a);
+      // console.log(b);
 
-        //Create a Object of an class
-        let SupObj = {
-            sup: class Sup {
-                constructor() {
-                    this.a = "hello"
-                }
-            }
-        }
+      //Create a Object of an class
+      // let SupObj = {
+      //   sup: class Sup {
+      //     constructor() {
+      //       this.a = "hello";
+      //     }
+      //   },
+      // };
 
-        const SupInstance = new SupObj.sup();
-        console.log(typeof SupInstance.a)
+      // const SupInstance = new SupObj.sup();
+      // console.log(typeof SupInstance.a);
 
-        const Work = new Promise((res,rej)=>{
-            if(Obj.name == "Rahul") {
-                res(Obj)
-            }else {
-                rej("Data Not Matched")
-            }
-        })
-        Work.then((res)=>{
-            console.log(`Hlw ${Obj.name}`)
-            return Obj.class1
-        })
-        .then((res)=>{
-            console.log(`You are belong from ${res} Class`)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
+      // example of promise
+      // const Work = new Promise((res, rej) => {
+      //   if (Obj.name == "Rahul") {
+      //     res(Obj);
+      //   } else {
+      //     rej("Data Not Matched");
+      //   }
+      // });
+      // Work.then((res) => {
+      //   console.log(`Hlw ${Obj.name}`);
+      //   return Obj.class1;
+      // })
+      //   .then((res) => {
+      //     console.log(`You are belong from ${res} Class`);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
 
-        let {name, class1, roll} = Obj;
-        roll = 5;
-        console.log(roll)
-        console.log(Obj.roll)
+      // Object Distructring
+      // let { name, class1, roll } = Obj;
+      // roll = 5;
+      // console.log(roll);
+      // console.log(Obj.roll);
+
+      // // Async Await
+      // const Work2 = async () => {
+      //   try {
+      //     const Data = await Obj;
+      //     if (Data.name === Obj.name) {
+      //       console.log(`Your Name is ${Data.name}`);
+      //       try {
+      //         const Class = await Obj.class1;
+      //         if (Class === "Ram") {
+      //           console.log(`You belong to ${Class} class`);
+      //         } else {
+      //           throw "Not match class";
+      //         }
+      //       } catch (err) {
+      //         console.log(err);
+      //       }
+      //     }
+      //   } catch (err) {
+      //     console.log(err);
+      //   }
+      // };
+      // Work2();
+
+      // let mainObj = {
+      //   type: "nested refference Type check",
+      //   subObj: {
+      //     name: "paul",
+      //     gender: "Male",
+      //     number: 1246
+      //   }
+      // }
+
+      // let cpyObj = mainObj.subObj;
+      // let typeObj = mainObj.type;
+      // typeObj = "haha chnaged"
+      // cpyObj.name = "Jhon"
+      // console.log(cpyObj)
+      // console.log(mainObj.subObj)
+      // console.log(mainObj.type)
+
+      // Var is function scoped
+      // function a() {
+      //   var v = 2;
+      //   function b() {
+      //     var v = 5;
+      //     console.log(v);
+      //   }
+      //   b();
+      //   console.log(v);
+      // }
+      // console.log(a());
+      // //var are not block scope it function scope
+      // var gV = 100;
+      // {
+      //   var gV = 1200;
+
+      // }
+
+      // function x () {
+      //   var gV = 200;
+      //   console.log(gV)
+      // }
+      // x()
+      // console.log(gV)
     </script>
-</body>
+  </body>
 </html>
