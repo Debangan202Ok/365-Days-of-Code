@@ -10,6 +10,7 @@ class Cart extends React.Component {
     };
   }
 
+
   render() {
     console.log("I'm Render Method");
     return (

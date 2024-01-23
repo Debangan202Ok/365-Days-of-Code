@@ -19,16 +19,14 @@ const Body = () => {
   };
 
   // Side effects
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWinSize(window.innerWidth);
     });
-    console.log(filterRes);
-  }, []);
-
-  useEffect(() => {
     fetchData();
-  }, []);
+  },[]);
+
   //Api calls
   const fetchData = async () => {
     const Data1 = await fetch(
