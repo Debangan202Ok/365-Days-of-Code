@@ -18,40 +18,26 @@ const Body = () => {
     width: `${Math.floor(winSize / 310) * 310}px`,
   };
 
-  // Side effects
-
+  //! Using useEffect with IFEs to fecth data after intial rendering
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWinSize(window.innerWidth);
     });
-    fetchData();
-  },[]);
 
-  //Api calls
-  const fetchData = async () => {
-    const Data1 = await fetch(
-      API_URL + "lat=12.960059122809971&lng=77.57337538383284"
-    );
-    const resData = await Data1.json();
-    const resCardData =
-      resData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setFilterRes(resCardData);
-    setSrchRes(resCardData);
-  };
-  if (filterRes.length == 0) {
-  }
-  const hasMore = async () => {
-    const moreData = await fetch(
-      API_URL + "lat=12.9351929&lng=77.62448069999999"
-    );
-    const moreDataRes = await moreData.json();
-    const moreDataCard =
-      moreDataRes?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setFilterRes([...filterRes, ...moreDataCard]);
-    setSrchRes([...srchRes, ...moreDataCard]);
-  };
+    //* IFEs -Invoke Function Expression
+    (async function () {
+      const Data1 = await fetch(
+        API_URL + "lat=12.960059122809971&lng=77.57337538383284"
+      );
+      const resData = await Data1.json();
+      const resCardData =
+        resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+
+      setFilterRes(resCardData);
+      setSrchRes(resCardData);
+    })();
+  }, []);
 
   //element functions
   const srchVal = () => {
@@ -62,7 +48,19 @@ const Body = () => {
   };
 
   const fetchMoreBtn = async () => {
-    hasMore();
+    //* In IFEs Call
+    (async () => {
+      const moreData = await fetch(
+        API_URL + "lat=12.9351929&lng=77.62448069999999"
+      );
+      const moreDataRes = await moreData.json();
+      const moreDataCard =
+        moreDataRes?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      console.log(moreDataRes)
+      setFilterRes([...filterRes, ...moreDataCard]);
+      setSrchRes([...srchRes, ...moreDataCard]);
+    })();
   };
 
   //! Rendering
@@ -86,7 +84,7 @@ const Body = () => {
             </Link>
           ))}
         </div>
-        {srchRes.length !== 0 && inputVal.length == 0 && (
+        {srchRes.length !== 0 && inputVal.length === 0 && (
           <span className="show-more" onClick={fetchMoreBtn}>
             SHOW MORE {">"}
           </span>

@@ -4,28 +4,27 @@ import { CDN_URL } from "../utils/constants";
 import Skeleton from "./Shimming";
 
 const ResturrantCard = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   const [resCardData, setResCardData] = useState([]);
   const [resMenuData, setResMenuData] = useState([]);
-  const [additem, setAddItem] = useState(100);
+  const [additem, setAddItem] = useState(0);
 
+  //* Fetch Restrant Menu & Info
   useEffect(() => {
-    resturantDetails();
+    (async function () {
+      const resturantData = await fetch(
+        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.960059122809971&lng=77.57337538383284&restaurantId=" +
+          id
+      );
+      const resData = await resturantData.json();
+      const resCardData = resData?.data?.cards[2]?.card?.card?.info;
+      const resMenuData =
+        resData?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+          .card?.card?.itemCards;
+      setResCardData(resCardData);
+      setResMenuData(resMenuData);
+    })();
   }, []);
-
-  const resturantDetails = async () => {
-    const resturantData = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.960059122809971&lng=77.57337538383284&restaurantId=" +
-        id
-    );
-    const resData = await resturantData.json();
-    const resCardData = resData?.data?.cards[0]?.card?.card?.info;
-    const resMenuData =
-      resData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card
-        ?.card?.itemCards;
-    setResCardData(resCardData);
-    setResMenuData(resMenuData);
-  };
 
   return resCardData.length === 0 ? (
     <Skeleton />
@@ -36,7 +35,8 @@ const ResturrantCard = () => {
           <h1>{resCardData?.name}</h1>
           <p>{resCardData?.cuisines?.join(", ")}</p>
           <p>
-            {resCardData?.areaName+","} {resCardData?.sla?.lastMileTravelString}
+            {resCardData?.areaName + ","}{" "}
+            {resCardData?.sla?.lastMileTravelString}
           </p>
           <p>{resCardData?.sla?.slaString.toLowerCase()}</p>
         </div>
@@ -58,11 +58,15 @@ const ResturrantCard = () => {
               </h5>
             </div>
             <div className="menu-image">
-                <img src={CDN_URL + item?.card?.info?.imageId} alt="" />
+              <img src={CDN_URL + item?.card?.info?.imageId} alt="" />
               <div className="add-to-cart-con">
-                <div onClick={()=> {
-                  setAddItem(additem => additem+1)
-                }}>ADD:{additem}</div>
+                <div
+                  onClick={() => {
+                    setAddItem((additem) => additem + 1);
+                  }}
+                >
+                  ADD:{additem}
+                </div>
               </div>
             </div>
           </div>
