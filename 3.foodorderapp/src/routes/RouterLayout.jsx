@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Body from "../components/body";
 import Home from "../App";
-// import Cart from "../components/Cart";
-// import ResturrantCard from "../components/ResturantCard";
 import { lazy, Suspense } from "react";
 
 const Cart = lazy(() => import("../components/Cart"));
@@ -27,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/resturant/:id",
-        element: <ResturrantCard />,
+        element: (
+          <Suspense>
+            <ResturrantCard />
+          </Suspense>
+        ),
       },
     ],
   },

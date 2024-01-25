@@ -17,14 +17,14 @@ const Body = () => {
 
   const reSizeCheck = () => {
     setWinSize(window.innerWidth);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", reSizeCheck);
 
     return () => {
       window.removeEventListener("resize", reSizeCheck);
-      console.log("unmount")
+      console.log("unmount");
     };
   }, []);
 
@@ -35,29 +35,21 @@ const Body = () => {
 
   //! Rendering
   //* condlitional rendering
-  return ResData.length === 0 ? (
+  return ResData?.length === 0 ? (
     <Skeleton />
   ) : (
     <div className="body">
-      {/* <SrchArea
-        inputVal={inputVal}
-        setInputVal={setInputVal}
-        srchVal={srchVal}
-      /> */}
-      {/* {srchRes.length === 0 && <NotFound />} */}
       <div className="con-wrap">
         <div className="res-container" style={{ width: containerWidth.width }}>
           {ResData.map((item) => (
-            <Link to={`/resturant/${item.info.id}`} key={item.info.id}>
-              <InfoCard resData={item.info} />
+            <Link to={`/resturant/${item?.info?.id}`} key={item?.info?.id}>
+              <InfoCard resData={item?.info} />
             </Link>
           ))}
         </div>
-        {/* {srchRes.length !== 0 && inputVal.length === 0 && ( */}
         <span className="show-more" onClick={fetchMoreBtn}>
           SHOW MORE {">"}
         </span>
-        {/* )} */}
       </div>
     </div>
   );

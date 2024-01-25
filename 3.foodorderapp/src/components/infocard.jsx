@@ -18,7 +18,7 @@ const InfoCard = (props) => {
       </div>
       <div className="body-container">
         <h2>{name}</h2>
-        <h4>{cuisines.concat(', ')}</h4>
+        <h4>{cuisines.join(', ')}</h4>
         <div className="price-con">
           <p>{totalRatingsString}Rating</p>
           <p>{avgRatingString}</p>

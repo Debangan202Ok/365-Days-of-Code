@@ -10,11 +10,11 @@ const useResturantData = (id) => {
       try {
         const response = await fetch(API_URL + urlId);
         const data = await response.json();
-        const resCardData = await
+        const resCardData =
           data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants;
-
-        setResInfo((prevData) => [...prevData, ...resCardData]);
+        console.log(resCardData)
+        setResInfo((prevData) => [...prevData,...(resCardData||[])]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
