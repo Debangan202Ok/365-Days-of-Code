@@ -10,7 +10,7 @@ const useResturantData = (id) => {
       try {
         const response = await fetch(API_URL + urlId);
         const data = await response.json();
-        const resCardData =
+        const resCardData = await
           data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants;
 

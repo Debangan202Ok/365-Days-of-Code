@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import InfoCard from "./infocard";
 import Skeleton from "./Shimming";
-import NotFound from "./NotFound";
-import SrchArea from "./bodysmallcom/SrchArea";
 import { Link } from "react-router-dom";
 import useResturantData from "../utils/hooks/useResturantData";
 
@@ -17,15 +15,16 @@ const Body = () => {
     width: `${Math.floor(winSize / 310) * 310}px`,
   };
 
+  const reSizeCheck = () => {
+    setWinSize(window.innerWidth);
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWinSize(window.innerWidth);
-    });
+    window.addEventListener("resize", reSizeCheck);
 
     return () => {
-      window.removeEventListener("resize", () => {
-        setWinSize(window.innerWidth);
-      });
+      window.removeEventListener("resize", reSizeCheck);
+      console.log("unmount")
     };
   }, []);
 

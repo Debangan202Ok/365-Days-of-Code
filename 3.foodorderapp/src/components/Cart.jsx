@@ -6,9 +6,8 @@ class Cart extends React.Component {
     super();
     console.log("I'm constructor Method");
     this.state = {
-      jsonUserData: {
-      }
-    }
+      jsonUserData: {},
+    };
   }
 
   componentDidMount() {
@@ -17,12 +16,12 @@ class Cart extends React.Component {
         "https://api.github.com/users/debangan202ok"
       );
       const jsonUserData = await githubUserData.json();
-      this.setState({jsonUserData: jsonUserData})
+      this.setState({ jsonUserData: jsonUserData });
     })();
   }
 
   render() {
-    const { name,bio,login } = this.state.jsonUserData;
+    const { name, bio, login } = this.state.jsonUserData;
     console.log("I'm Render Method");
     return (
       <div>
