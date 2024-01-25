@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>A Simple React Demostration Project</h1>
+      <p>
+        Through Out this project you will get a knowledge about how react work.
+        in this project you will be able to know, why react efficient in dom
+        manipulation & how component lifecycle work. what are the necessity of
+        hooks.
+      </p>
+      <p>
+        Using the parcel bundler this react app bundled all the js file into
+        single file. you can check it through Developer console, for seeing the
+        file press F12 or ctrl+shift+c.This file present at the end of the body
+        of this html
+      </p>
+      <h3>File Look like:</h3>
+      <p>&lt;script src="index***.js" defer &frasl; &gt;</p>
+      <button id="btn">Active React</button>
+      <p>
+        React is Still not active in this page. so for now it will act as a pure
+        html page. after click on the active button it will be activate the
+        react components.
+      </p>
+      <hr />
+      <h2>A pure Html Counter App Demostration</h2>
+      <p>
+        This counter app use the vanila approach to update the value of the
+        counter through get the element thorugh element selector and chnage the
+        innerText when each click function update the variable value.
+      </p>
+      <button id="decBtn">Decrease</button>
+      <span id="outPut">0</span>
+      <button id="incBtn">Increase</button>
+    </div>
+    <script>
+      const outPut = document.getElementById("outPut");
+      let val = 0;
+      document.getElementById("decBtn").addEventListener("click", () => {
+        val -= 1;
+        outPut.innerText = val;
+      });
+      document.getElementById("incBtn").addEventListener("click", () => {
+        val += 1;
+        outPut.innerText = val;
+      });
+    </script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
