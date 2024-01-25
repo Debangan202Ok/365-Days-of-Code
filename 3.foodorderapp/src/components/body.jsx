@@ -9,7 +9,9 @@ import useResturantData from "../utils/hooks/useResturantData";
 const Body = () => {
   //states
   const [winSize, setWinSize] = useState(window.innerWidth);
-  const ResData = useResturantData("lat=12.960059122809971&lng=77.57337538383284");
+  const [ResData, setResData] = useResturantData(
+    "lat=12.960059122809971&lng=77.57337538383284"
+  );
   //style objects
   const containerWidth = {
     width: `${Math.floor(winSize / 310) * 310}px`,
@@ -19,9 +21,17 @@ const Body = () => {
     window.addEventListener("resize", () => {
       setWinSize(window.innerWidth);
     });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setWinSize(window.innerWidth);
+      });
+    };
   }, []);
 
   const fetchMoreBtn = () => {
+    setResData("lat=12.9351929&lng=77.62448069999999");
+    console.log("clicked");
   };
 
   //! Rendering
