@@ -2,9 +2,11 @@
   "name": "test",
   "version": "1.0.0",
   "description": "a test file for react projects",
+  "source": "./index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel serve index.html"
+    "watch": "parcel watch",
+    "build": "parcel build"
   },
   "author": "paul",
   "license": "ISC",

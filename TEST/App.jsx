@@ -1,6 +1,9 @@
-import { useState } from "react";
-import VanilaCounter from "./components/VanilaCounter";
-import ReactCounter from "./components/ReactCounter";
+import { Suspense, lazy, useState } from "react";
+// import VanilaCounter from "./components/VanilaCounter";
+// import ReactCounter from "./components/ReactCounter";
+
+const VanilaCounter = lazy(() => import("./components/VanilaCounter"));
+const ReactCounter = lazy(() => import("./components/ReactCounter"));
 
 export default App = () => {
   console.log("React App component loaded into the actual dom");
@@ -77,8 +80,10 @@ export default App = () => {
       </p>
       {val === true ? (
         <>
-          <VanilaCounter />
-          <ReactCounter />
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <VanilaCounter />
+            <ReactCounter />
+          </Suspense>
           <hr />
           <h2>2.Want to Know How the above counters behave like this Way?</h2>
         </>
