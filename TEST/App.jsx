@@ -1,4 +1,5 @@
 import { Suspense, lazy, useState } from "react";
+import TodoArea from "./components/TodoArea";
 // import VanilaCounter from "./components/VanilaCounter";
 // import ReactCounter from "./components/ReactCounter";
 
@@ -90,6 +91,21 @@ export default App = () => {
       ) : (
         <button onClick={() => setVal(true)}>Show</button>
       )}
+      <hr />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam natus,
+        eligendi repudiandae dicta quidem libero atque illum laborum est eum,
+        omnis a placeat unde voluptatibus assumenda suscipit dolorum doloremque
+        alias laudantium dolores quam ducimus? Eveniet dolore facilis iste magni
+        saepe velit quos cum tenetur debitis, architecto voluptates repellendus
+        aspernatur eum! Nulla minus reiciendis repudiandae alias a! Dignissimos
+        ipsam, explicabo at nemo, consectetur id, reprehenderit beatae numquam
+        est totam voluptatum. Corrupti voluptas reiciendis a quas maxime officia
+        veniam aliquam odit earum cumque eius pariatur vel similique, velit
+        tenetur omnis eaque minima, esse autem excepturi, modi temporibus.
+        Itaque assumenda dolor obcaecati maxime.
+      </p>
+      <TodoArea/>
     </>
   );
 };

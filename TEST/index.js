@@ -11,3 +11,7 @@ export const loadData = () => {
 };
 
 document.getElementById("btn").addEventListener("click", loadData);
+
+
+
+
