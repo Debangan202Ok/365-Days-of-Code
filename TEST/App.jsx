@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from "react";
 import TodoArea from "./components/TodoArea";
-import { ThemeProvider } from "./components/ThemeContext";
+import { ThemeProvider, useTheme } from "./components/ThemeContext";
 // import VanilaCounter from "./components/VanilaCounter";
 // import ReactCounter from "./components/ReactCounter";
 
@@ -10,9 +10,11 @@ const ReactCounter = lazy(() => import("./components/ReactCounter"));
 export default App = () => {
   console.log("React App component loaded into the actual dom");
   const [val, setVal] = useState(false);
+  const { theme } = useTheme();
+  console.log(theme)
   return (
     <ThemeProvider>
-      <>
+      <div style={{ backgroundColor: theme == "light" ? "#fff" : "#fff" }}>
         <h1>Hello, From React</h1>
         <p>
           It's now purely a react app. you can check out this through developer
@@ -109,7 +111,7 @@ export default App = () => {
           obcaecati maxime.
         </p>
         <TodoArea />
-      </>
+      </div>
     </ThemeProvider>
   );
 };
