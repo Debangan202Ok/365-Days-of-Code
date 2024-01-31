@@ -17,3 +17,5 @@ console.log(Math.floor(os.freemem() / (1024 * 1024 * 1024)), "gb is free");
 
 console.log(os.homedir());
 console.log(os.machine());
+
+//today i was learn about shadcn ui and other ui library their uses and logic behind that
