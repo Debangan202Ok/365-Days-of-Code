@@ -72,44 +72,6 @@ export default App = () => {
             work. Because react component parses differently.
           </li>
         </ol>
-        <p>
-          <b>Conclusion:</b>What we did to manipulate the dom in vanila js.
-          might not work in react because it's own parsing nature. we will se
-          how react different from the vanila js.
-        </p>
-        <hr />
-        <h2>Talk Cheap! Lets Go to Explore the Differences</h2>
-        <p>
-          In this Section we will run two counter app one will use the vanila
-          approach and one will use react approach.
-        </p>
-        {val === true ? (
-          <>
-            <Suspense fallback={<h1>Loading....</h1>}>
-              <VanilaCounter />
-              <ReactCounter />
-            </Suspense>
-            <hr />
-            <h2>2.Want to Know How the above counters behave like this Way?</h2>
-          </>
-        ) : (
-          <button onClick={() => setVal(true)}>Show</button>
-        )}
-        <hr />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam natus,
-          eligendi repudiandae dicta quidem libero atque illum laborum est eum,
-          omnis a placeat unde voluptatibus assumenda suscipit dolorum
-          doloremque alias laudantium dolores quam ducimus? Eveniet dolore
-          facilis iste magni saepe velit quos cum tenetur debitis, architecto
-          voluptates repellendus aspernatur eum! Nulla minus reiciendis
-          repudiandae alias a! Dignissimos ipsam, explicabo at nemo, consectetur
-          id, reprehenderit beatae numquam est totam voluptatum. Corrupti
-          voluptas reiciendis a quas maxime officia veniam aliquam odit earum
-          cumque eius pariatur vel similique, velit tenetur omnis eaque minima,
-          esse autem excepturi, modi temporibus. Itaque assumenda dolor
-          obcaecati maxime.
-        </p>
         <TodoArea />
       </div>
     </ThemeProvider>
