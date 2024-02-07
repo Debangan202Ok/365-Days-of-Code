@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <meta name="keywords" content="form,data" />
+    <title>Basic Form in html</title>
+    <noscript>This is not javascript</noscript>
+  </head>
+  <body>
+    <center>
+      <h1>Form in Html:5</h1>
+      <hr />
+      <form action="http://localhost:1234/datatake.php" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="enter your name"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="number">Phone No.</label>
+          <input
+            type="number"
+            name="ph_no"
+            id="number"
+            placeholder="enter your number"
+            minlength="1"
+            maxlength="10"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="password">password</label>
+          <input type="password" name="pass" id="password" />
+        </div>
+        <br />
+        <div>
+          <label for="gender">Gender</label>
+          <select name="gen" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <span>Read Term & Condition</span>
+          <input type="checkbox" name="" id="t_c" />
+        </div>
+        <br />
+        <div>
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </center>
+  </body>
+</html>
