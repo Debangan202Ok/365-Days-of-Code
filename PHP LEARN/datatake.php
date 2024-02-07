@@ -16,9 +16,10 @@
     $num = $_POST["ph_no"];
     $pass = $_POST["pass"];
     $gen = $_POST["gen"];
+    $has = password_hash($pass, null);
     echo "<p>your name is $name & phone no. is $num</p>";
     echo "<p>your age is $gen</p>";
-    echo "<p>your password is $pass</p>";
+    echo "<p>your password is $pass - $has</p>";
     ?>
 </body>
 
