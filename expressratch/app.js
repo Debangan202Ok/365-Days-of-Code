@@ -1,17 +1,32 @@
-const exp = require("express");
+const express = require("express");
+const app = express();
 const path = require("path");
-const app = exp();
+const PORT = 3000;
 
-app.use("/static", exp.static(path.join(__dirname, "static")));
+// Middleware to parse JSON in request body
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/",(req,res)=> {
-  res.send("<h1>Hello From ExpressJS</h1>")
-})
+// Route for the home page
+app.get("/", (req, res) => {
+  res.send("<h1>Hello, World</h1>");
+});
 
-app.listen(3000, (res) => {
-  if (!res) {
-    console.log("Server is Successfully Running, App is listening on port ");
+// Route for the login page
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "static/greet.html"));
+});
+
+//Route for process from data
+app.post("/process", (req, res) => {
+  const fromData = req.body.name;
+  console.log(fromData);
+  res.send("data received successfully");
+});
+
+app.listen(PORT, (err) => {
+  if (!err) {
+    console.log(`Server is running on http://localhost:${PORT}`);
   } else {
-    console.log("Error", res);
+    console.error("Error starting the server:", err);
   }
 });
