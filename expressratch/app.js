@@ -1,11 +1,11 @@
 const exp = require("express");
+const path = require("path");
 const app = exp();
-const port = 3000;
 
+app.use("/static", exp.static(path.join(__dirname, "static")));
 
 app.get("/",(req,res)=> {
-    res.status(200)
-    res.send("Welcome to the root route")
+  res.send("<h1>Hello From ExpressJS</h1>")
 })
 
 app.listen(3000, (res) => {
