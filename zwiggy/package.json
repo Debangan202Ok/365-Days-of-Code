@@ -1,0 +1,20 @@
+{
+  "name": "zwiggy",
+  "version": "0.0.1",
+  "description": "An online food ordering app.",
+  "scripts": {
+    "start": "parcel ./src/entry/index.html"
+  },
+  "author": "pauldebangan",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  }
+}
