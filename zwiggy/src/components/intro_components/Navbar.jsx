@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [winSize, setWinSize] = useState(window.innerWidth);
   const [banner, setBanner] = useState([]);
 
   useEffect(() => {
     const calculateBannerSize = () => {
       const newSize = Math.round(window.innerWidth / 60) + 1;
       setBanner(Array.from({ length: newSize }, (_, index) => index));
-      setWinSize(window.innerWidth);
     };
 
     // Initial calculation
