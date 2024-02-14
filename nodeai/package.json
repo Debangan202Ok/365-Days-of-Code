@@ -1,0 +1,13 @@
+{
+  "name": "nodeai",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "mic": "^2.1.2"
+  }
+}
