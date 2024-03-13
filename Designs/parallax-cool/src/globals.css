@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glass-morph {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
+}
+
+.menu-item {
+  opacity: 0; /* Start with items hidden */
+  max-height: 0; /* Start with height 0 */
+  overflow: hidden; /* Prevent scroll when item is collapsed */
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+}
+
+.menu-open .menu-item {
+  opacity: 1; /* Show the items when menu is open */
+  max-height: 50px; /* Example - adjust max-height as needed  */
+}
+
